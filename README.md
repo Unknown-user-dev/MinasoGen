@@ -1,4 +1,4 @@
-## PasswordGenerator with Base64
+## PasswordGenerator Alias MinasoGen with Base64
 ### With python made by Unknown User
 ![Github Stars](https://img.shields.io/github/stars/Unknown-user-dev/MinasoGen?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues-raw/Unknown-user-dev/MinasoGen?style=flat-square)
