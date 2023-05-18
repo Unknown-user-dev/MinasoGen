@@ -22,7 +22,10 @@ The Password Generator, feat MinasoGEN; ⓒ Unknown User
 
 ✅ Decode Password
 
+✅ Save Password to a Txt
+
 ✅ Very cute anime girl ❤ (Very Important)
+
 
 ### Installation
 
