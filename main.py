@@ -19,9 +19,6 @@ banner = Fore.RED + f"""
 """
 
 print(banner)
-import random
-import base64
-from colorama import Fore
 
 def random_password():
     password = ""
