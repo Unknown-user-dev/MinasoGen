@@ -19,19 +19,31 @@ banner = Fore.RED + f"""
 """
 
 print(banner)
+import random
+import base64
+from colorama import Fore
+
 def random_password():
     password = ""
     for i in range(16):
         password += chr(random.randint(33, 126))
     return password
+
+def save_password_to_txt(filename, password):
+    with open(filename, 'a') as file:  
+        file.write(password + '\n') 
+    print(f"Le mot de passe a été ajouté au fichier {filename}.")
+
 def encode(password):
     password = password.encode()
     password = base64.b64encode(password)
     return password.decode()
+
 def decode(password):
     password = password.encode()
     password = base64.b64decode(password)
     return password.decode()
+
 def menu():
     print(Fore.GREEN + """
     [1] Générer un mot de passe aléatoire
@@ -43,16 +55,19 @@ def menu():
     choice = input(Fore.BLUE + "Choisissez une option : ")
     if choice == "1":
         password = random_password()
+        save_password_to_txt("mdp.txt", password)
         print(Fore.YELLOW + f"Votre mot de passe est : {password}")
         menu()
     elif choice == "2":
         password = input(Fore.BLUE + "Saisissez le mot de passe : ")
         password = encode(password)
+        save_password_to_txt("mdp.txt", password)
         print(Fore.YELLOW + f"Votre mot de passe encodé est : {password}")
         menu()
     elif choice == "3":
         password = input(Fore.BLUE + "Saisissez le mot de passe : ")
         password = decode(password)
+        save_password_to_txt("mdp.txt", password)
         print(Fore.YELLOW + f"Votre mot de passe décoder est : {password}")
         menu()
     elif choice == "4":
@@ -63,5 +78,7 @@ def menu():
     else:
         print(Fore.RED + "Erreur : Veuillez saisir une option valide !")
         menu()
+
 if __name__ == "__main__":
     menu()
+
